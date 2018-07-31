@@ -14,6 +14,14 @@ namespace temperature.test {
 
             x.Should ().Be (expectedResult);
         }
+        [Theory (DisplayName = "เปลี่ยนค่า องศา Fahrenheit ให้เป็น Celsius ได้สำเร็จ")]
+        [InlineData (50, 10)]
+        public void ConvertFahrenheitToCelsiusSuccessTest (double input, double expectedResult) {
+            var cal = new TempCalculator ();
+            var x = cal.ConvertFahrenheitToCelsius (input);
+
+            x.Should ().Be (expectedResult);
+        }
 
         [Theory (DisplayName = "เปลี่ยนค่า องศา Kelvin ให้เป็น Celsius ได้สำเร็จ")]
         [InlineData (363.15, 90)]
